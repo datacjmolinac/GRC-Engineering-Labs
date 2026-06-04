@@ -1,20 +1,26 @@
-\## compliant-s3
+# GRC Engineering Labs
 
+Hands-on compliance-as-code portfolio built as part of the CGE-P (Certified GRC Engineer - Practitioner) certification from the GRC Engineering Club.
 
+## What this is
 
-This module provisions a compliant AWS S3 bucket pair (primary + log) that enforces five NIST 800-53 controls by design:
+This repository contains working Terraform infrastructure, policy-as-code, and machine-readable compliance evidence for each lab in the CGE-P curriculum. Every lab produces real artifacts — no screenshots.
 
+## Structure
 
+terraform/primitives/ — Reusable compliant infrastructure modules
+evidence/             — Machine-readable JSON compliance evidence per lab
 
-\- SC-28: Server-side encryption (AES-256) applied by default to all objects at rest
+## Labs completed
 
-\- AC-3: All four public access block flags set to true, eliminating every public access vector
+Lab 2.3 — Compliant S3 bucket (primary + log) — SC-28, AC-3, CM-6, AU-3/AU-6 — Complete
 
-\- CM-6: Versioning enabled to preserve object history and prevent unauthorized deletion of evidence
+## Certification
 
-\- AU-3 / AU-6: Server access logging enabled, with logs delivered to a dedicated log bucket with its own encryption and public access controls
+CGE-P — Certified GRC Engineer Practitioner
+GRC Engineering Club — AJ Yawn and Abdie Mohamed
 
+## Related
 
-
-No screenshots. Compliance is expressed as code and verified via machine-readable JSON evidence captured with terraform show -json.
-
+GRC Portfolio: https://d38tr29xjy4yu5.cloudfront.net
+GitHub: https://github.com/cjmolinac/GRC-Portfolio
