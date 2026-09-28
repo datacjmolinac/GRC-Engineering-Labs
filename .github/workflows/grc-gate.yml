@@ -17,3 +17,13 @@ jobs:
           tar -xzf conftest.tar.gz conftest
           sudo mv conftest /usr/local/bin/
           conftest --version
+      - name: evidences
+        run: |
+          mkdir -p evidence
+          conftest test --policy policies --namespace compliance.sc28_aws --namespace compliance.ac3_aws --namespace compliance.cm6_aws plan.json --output json > evidence/conftest-results.json
+      - name: up_evidences
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: conftest-evidence
+          path: evidence/
