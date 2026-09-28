@@ -5,3 +5,4 @@ tfplan
 terraform.tfstate
 terraform.tfstate.backup
 plan.json
+!/plan.json
